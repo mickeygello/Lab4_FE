@@ -6,14 +6,22 @@ import './style.css';
 const ProductList = () => {
     const [Product, setProduct] = useState();
 
-    useEffect(() =>{
+    useEffect(() => {
         axios.get('http://localhost:9999/api/products/product')
-        .then((data) => setProduct(data.data))
-        .then(console.log(Product))
-        .catch((error) => console.error("Error fetching product", error));
-    },[])
+            .then((data) => setProduct(data.data))
+            .then(console.log(Product))
+            .catch((error) => console.error("Error fetching product", error));
+    }, [])
 
-    const handleDetail = (id) =>{
+    if (!Product) {
+        return (
+            <div>
+                loading...
+            </div>
+        )
+    }
+
+    const handleDetail = (id) => {
 
     }
 

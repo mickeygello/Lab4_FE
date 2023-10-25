@@ -12,6 +12,13 @@ const CategoryList = () =>{
         .catch((error) => console.error("Error fetching category", error));
     })
 
+    if(!category){
+        return(
+            <div>
+                loading...
+            </div>
+        )
+    }
 
     return (
         <div>
