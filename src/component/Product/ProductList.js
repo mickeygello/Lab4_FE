@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import axios from 'axios'
 import './style.css';
+import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const ProductList = () => {
     const [Product, setProduct] = useState();
+    const nav = useNavigate()
 
     useEffect(() => {
         axios.get('http://localhost:9999/api/products/product')
@@ -29,7 +32,8 @@ const ProductList = () => {
         <div>
             <div className="container">
                 <div className="head-name">
-                    <h1>Product</h1>
+                    <h1>Product List</h1>
+                    <button className='add-btn' onClick={() => nav(`/createProduct`)}>Add Product</button>
                 </div>
                 <table style={{ borderCollapse: "collapse" }}>
                     <thead style={{ borderBottom: "1px black solid" }}>

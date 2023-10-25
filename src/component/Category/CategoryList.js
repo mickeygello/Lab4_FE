@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 
 const CategoryList = () =>{
     const [category, setCategory] = useState();
+    const nav = useNavigate()
 
     useEffect(() =>{
         axios.get('http://localhost:9999/api/categories/category')
@@ -11,7 +12,7 @@ const CategoryList = () =>{
         .then(console.log(category))
         .catch((error) => console.error("Error fetching category", error));
     })
-
+    
     if(!category){
         return(
             <div>
@@ -25,6 +26,7 @@ const CategoryList = () =>{
             <div className="container">
                 <div className="head-name">
                     <h1>Category List</h1>
+                    <button className="add-btn" onClick={() => nav(`/createCategory`)}>Add Category</button>
                 </div>
                 <table style={{ borderCollapse: "collapse" }}>
                     <thead style={{ borderBottom: "1px black solid" }}>
