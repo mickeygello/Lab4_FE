@@ -13,7 +13,7 @@ const AddCategory = () => {
 
     const handleCreate = async e =>{
         e.preventDefault();
-        axios.post('http://localhost:9999/api/categories/category', {
+        axios.post('http://localhost:9999/categories/', {
             name: name,
             description: des
           })

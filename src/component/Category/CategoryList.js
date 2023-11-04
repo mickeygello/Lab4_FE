@@ -7,8 +7,8 @@ const CategoryList = () =>{
     const nav = useNavigate()
 
     useEffect(() =>{
-        axios.get('http://localhost:9999/api/categories/category')
-        .then((data) =>setCategory(data.data))
+        axios.get('http://localhost:9999/categories/')
+        .then((data) =>setCategory(data.data.data))
         .then(console.log(category))
         .catch((error) => console.error("Error fetching category", error));
     })

@@ -1,6 +1,6 @@
 .head{
     display: flex;
-    background-color: black;
+    background-color: white(0, 95, 21);
     color: gray;
     column-gap: 1.5em;
     padding-left: 15%;
@@ -8,10 +8,13 @@
     height: 3.5rem;
     min-width: 100%;
     margin-bottom: 10px;
+    box-shadow: 10px 10px 5px lightgrey;
 }
 .head a:first-child{
-    color: white;
+    color: rgb(73, 204, 73);
     font-weight: bold;
+    font-size: 2em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .head a{

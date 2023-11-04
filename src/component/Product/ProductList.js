@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Table from 'react-bootstrap/Table';
 import axios from 'axios'
 import './style.css';
-import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const ProductList = () => {
@@ -10,11 +8,11 @@ const ProductList = () => {
     const nav = useNavigate()
 
     useEffect(() => {
-        axios.get('http://localhost:9999/api/products/product')
-            .then((data) => setProduct(data.data))
+        axios.get('http://localhost:9999/products/')
+            .then((data) => setProduct(data.data.data))
             .then(console.log(Product))
             .catch((error) => console.error("Error fetching product", error));
-    }, [])
+    },[])
 
     if (!Product) {
         return (
@@ -25,6 +23,7 @@ const ProductList = () => {
     }
 
     const handleDetail = (id) => {
+        nav(`/product/${id}`)
 
     }
 
