@@ -49,7 +49,7 @@ const ProductDetail = () => {
     return (
         <div className="container2">
             <div className="card">
-                <img src={process.env.PUBLIC_URL + "/img/img1.png"}/>
+                <img src={process.env.PUBLIC_URL + "/images/excel.png"}/>
                 <h3>{product.name}</h3>
                 <p>Price: ${product.price}</p>
             </div>

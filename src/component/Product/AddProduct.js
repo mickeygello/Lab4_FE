@@ -15,10 +15,16 @@ const AddProduct = () => {
             .then((data) => setCategory(data.data.data))
             .then(console.log(categories))
             .catch((error) => console.error("Error fetching category", error));
-    })
+    },[])
 
     const nav = useNavigate()
     console.log(name, price, cate);
+    // console.log(img);
+
+    // const handleChangeImg = (e) =>{
+    //     const pathImg = e.target.files
+    //     console.log(pathImg);
+    // }
 
     const handleCreate = async e => {
         e.preventDefault();
@@ -68,11 +74,12 @@ const AddProduct = () => {
                         />
                         {/* <input
                             name='category'
-                            type='text'
-                            placeholder='Category name'
+                            type='file'
+                            placeholder='Image'
                             required
-                            value={cate}
-                            onChange={e => setCate(e.target.value)}
+                            // value={img}
+                            // onChange={e => setImg(e.target.value)}
+                            onChange={e => handleChangeImg(e)}
                         /> */}
                         <select
                             onChange={(e) => setCate(e.target.value)}
