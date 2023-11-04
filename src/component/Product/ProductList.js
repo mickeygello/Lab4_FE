@@ -12,7 +12,7 @@ const ProductList = () => {
             .then((data) => setProduct(data.data.data))
             .then(console.log(Product))
             .catch((error) => console.error("Error fetching product", error));
-    },[])
+    },[Product])
 
     if (!Product) {
         return (
